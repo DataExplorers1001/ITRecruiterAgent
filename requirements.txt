@@ -1,0 +1,4 @@
+requests
+pyodbc
+azure-storage-blob
+dotenv
