@@ -131,8 +131,7 @@ def bot_loop():
                     print(f"- {job.JobID}: {job.Title} : {job.Location}")
             else:
                 print("Bot: Sorry, no active job openings found.")
-
-
+                
         elif intent == "ApplyJob":
             job = None
             job_entity = None
