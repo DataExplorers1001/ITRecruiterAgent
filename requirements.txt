@@ -4,3 +4,6 @@ azure-storage-blob
 dotenv
 PyPDF2
 pdfplumber
+openai
+pandas
+azure.search.documents
