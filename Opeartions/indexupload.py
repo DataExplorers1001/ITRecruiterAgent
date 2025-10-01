@@ -50,12 +50,13 @@ query = """
             ,ResumeTxt
             ,ResumeURL
         FROM datCandidateApplications
+        where ResumeTxt is not null;
         """
 df_candidates = pd.read_sql(query, conn)  #df of candidates
 conn.close()
 
 print(df_candidates.head())
-df_candidates['resumeVector'] = df_candidates['resume_text'].apply(generate_embedding)
+df_candidates['resumeVector'] = df_candidates['ResumeTxt'].apply(generate_embedding)
 
 
 #seach client object
@@ -80,9 +81,10 @@ def upload_candidates():
             "resumeText": row['ResumeTxt'],
             "resumeVector": row['resumeVector']
         })
-        print(row['column1'])
+        print(row['ApplicationID'])
         print('#'*25)
     client.upload_documents(documents=docs)
+    # print(docs)
     print("Uploaded candidates successfully!")
 
 print("Functin calling...")
