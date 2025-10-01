@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-load_dotenv()
+
 
 # --- Azure Language Service Config ---
 endpoint = os.getenv("Language_endpoint")
