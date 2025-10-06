@@ -1,0 +1,27 @@
+defJobs
+    JobID
+    Title
+    Description
+    Location
+    IsActive
+
+datCandidateApplications
+    ApplicationID
+    Name
+    Email
+    Phone
+    JobID
+    ResumeURL
+    ResumeTxt
+    CreatedAt
+
+datCandidateMailInfo
+    id
+    CandidateID
+    Email
+    JobID
+    IsMailSent
+    IsResponded
+    IsInterested
+    RespondedDate
+    CreatedDate
