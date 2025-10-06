@@ -29,9 +29,9 @@ INDEX_NAME =os.getenv("search_INDEX_NAME")
 
 
 #for embedding
-endpoint =os.getenv("em_endpoint")
-deployment_name =os.getenv("em_deployment_name")
-api_key =os.getenv("em_api_key")
+em_endpoint =os.getenv("em_endpoint")
+em_deployment_name =os.getenv("em_deployment_name")
+em_api_key =os.getenv("em_api_key")
 
 
 #llm object
@@ -50,14 +50,14 @@ conn = pyodbc.connect(sql_conn_str)
 
 #openAI client object
 client = OpenAI(
-    base_url = endpoint,
-    api_key = api_key,
+    base_url = em_endpoint,
+    api_key = em_api_key,
 ) 
 
 #embedding generation
 def generate_embedding(text):
     response = client.embeddings.create(
-        model=deployment_name,
+        model=em_deployment_name,
         input=text
     )
     return response.data[0].embedding
@@ -145,6 +145,8 @@ def parse_query(user_query: str):
 
     return parsed
 
+
+#query to filter based on exp and location if
 user_input = "I want a Content writer in Pune"
 
 parsed = parse_query(user_input)

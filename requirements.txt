@@ -8,3 +8,4 @@ openai
 pandas
 azure.search.documents
 fastapi
+uvicorn
